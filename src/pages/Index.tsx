@@ -73,7 +73,8 @@ const Index = () => {
           <nav className="hidden md:flex gap-6">
             <a href="#services" className="text-foreground hover:text-primary transition-colors">Услуги</a>
             <a href="#booking" className="text-foreground hover:text-primary transition-colors">Запись</a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">О нас</a>
+            <a href="#gallery" className="text-foreground hover:text-primary transition-colors">Галерея</a>
+            <a href="#reviews" className="text-foreground hover:text-primary transition-colors">Отзывы</a>
             <a href="#contacts" className="text-foreground hover:text-primary transition-colors">Контакты</a>
           </nav>
         </div>
@@ -247,7 +248,122 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="about" className="py-20 px-4">
+      <section id="gallery" className="py-20 px-4 bg-muted/30">
+        <div className="container mx-auto">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-accent">Наше пространство</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Погрузитесь в атмосферу спокойствия и уюта
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="relative h-80 overflow-hidden rounded-lg group animate-scale-in">
+              <img 
+                src="https://cdn.poehali.dev/projects/2af9282e-9460-42fd-8e9b-6827c517fe98/files/e2f1bdb3-4faf-42a1-aeb3-a71cc143d449.jpg"
+                alt="Массажный кабинет"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                <h3 className="text-white text-xl font-semibold">Массажный кабинет</h3>
+              </div>
+            </div>
+            <div className="relative h-80 overflow-hidden rounded-lg group animate-scale-in" style={{ animationDelay: '0.1s' }}>
+              <img 
+                src="https://cdn.poehali.dev/projects/2af9282e-9460-42fd-8e9b-6827c517fe98/files/376be203-c6d4-4050-8d55-5b13b9460bd6.jpg"
+                alt="Ресепшен"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                <h3 className="text-white text-xl font-semibold">Ресепшен</h3>
+              </div>
+            </div>
+            <div className="relative h-80 overflow-hidden rounded-lg group animate-scale-in" style={{ animationDelay: '0.2s' }}>
+              <img 
+                src="https://cdn.poehali.dev/projects/2af9282e-9460-42fd-8e9b-6827c517fe98/files/07ccc136-c462-4d3d-ad6a-d9b614a79836.jpg"
+                alt="Зона отдыха"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                <h3 className="text-white text-xl font-semibold">Зона отдыха</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews" className="py-20 px-4">
+        <div className="container mx-auto">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-accent">Отзывы клиентов</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Что говорят о нас наши гости
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="p-8 animate-scale-in border-border/50">
+              <div className="flex gap-1 mb-4">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Icon key={star} name="Star" className="text-primary fill-primary" size={20} />
+                ))}
+              </div>
+              <p className="text-muted-foreground mb-6 italic">
+                "Невероятная атмосфера и профессиональные мастера! После тайского массажа чувствую себя заново рожденной. Обязательно вернусь!"
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                  <Icon name="User" className="text-primary" size={24} />
+                </div>
+                <div>
+                  <div className="font-semibold">Елена Смирнова</div>
+                  <div className="text-sm text-muted-foreground">15 октября 2024</div>
+                </div>
+              </div>
+            </Card>
+            
+            <Card className="p-8 animate-scale-in border-border/50" style={{ animationDelay: '0.1s' }}>
+              <div className="flex gap-1 mb-4">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Icon key={star} name="Star" className="text-primary fill-primary" size={20} />
+                ))}
+              </div>
+              <p className="text-muted-foreground mb-6 italic">
+                "Массаж горячими камнями — это нечто! Такого глубокого расслабления я не испытывал давно. Интерьер располагает к отдыху."
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                  <Icon name="User" className="text-primary" size={24} />
+                </div>
+                <div>
+                  <div className="font-semibold">Андрей Петров</div>
+                  <div className="text-sm text-muted-foreground">8 октября 2024</div>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-8 animate-scale-in border-border/50" style={{ animationDelay: '0.2s' }}>
+              <div className="flex gap-1 mb-4">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Icon key={star} name="Star" className="text-primary fill-primary" size={20} />
+                ))}
+              </div>
+              <p className="text-muted-foreground mb-6 italic">
+                "Хожу сюда уже полгода. Всегда внимательное отношение, чистота и качество на высоте. Мой любимый спа-салон в Москве!"
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                  <Icon name="User" className="text-primary" size={24} />
+                </div>
+                <div>
+                  <div className="font-semibold">Мария Иванова</div>
+                  <div className="text-sm text-muted-foreground">2 октября 2024</div>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-4xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
